@@ -1,0 +1,25 @@
+server.port: 8080
+
+spring:
+  liquibase:
+    enabled: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5552/security
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+
+security:
+  jwt:
+    secret: secret
+    tokenExpiration: 1m
+    refreshTokenExpiration: 10m
+
+logging:
+  file.path: ./logs
